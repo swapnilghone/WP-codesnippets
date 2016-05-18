@@ -9,7 +9,7 @@ function add_tools_option(){
     add_management_page('Payment Report', 'Payment Report', 'manage_options', 'payreport', 'pay_report_calback');
 }
         
-add_action('init','add_tools_option');
+add_action('admin_init','add_tools_option');
 
 function pay_report_calback(){
         
