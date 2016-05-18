@@ -35,9 +35,8 @@ function add_category_template_field() {
 add_action('wsi-product-cat_edit_form_fields', 'edit_category_template_field', 10, 2);
 
 function edit_category_template_field($term) {
-
-    $cat_template = get_option("taxonomy_$term->term_id");
-
+    
+    $cat_template = get_term_meta($term->term_id,'wsi_prodcut_cat_template',true);
     $templates = array(
         'tempalte1' => 'Template1',
         'tempalte2' => 'Template2',
@@ -72,10 +71,8 @@ add_action('edited_wsi-product-cat', 'save_category_template_field', 10, 2);
 add_action('create_wsi-product-cat', 'save_category_template_field', 10, 2);
 
 function save_category_template_field($term_id) {
-
     if (isset($_POST['wsi_prodcut_cat_template'])) {
-        // Save the option array.
-        update_option("taxonomy_$term_id", $_POST['wsi_prodcut_cat_template']);
+        update_term_meta("template_$term_id", 'wsi_prodcut_cat_template', $_POST['wsi_prodcut_cat_template']);
     }
 }
 
