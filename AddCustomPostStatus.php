@@ -1,5 +1,4 @@
 <?php
-
 /* 
  * Create custom post status and dispaly it at admin end
  */
