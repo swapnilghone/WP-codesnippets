@@ -11,7 +11,7 @@
  * 
  * {$taxonomy_name}_add_form_fields - add custom field
  * {$taxonomy_name}_edit_form_fields - edit custom field
- * edited_{$taxonomy_name}  - save custom field
+ * edit_{$taxonomy_name}  - save custom field
  * create_{$taxonomy_name}  - save custom field
  */
 
@@ -67,12 +67,12 @@ function edit_category_template_field($term) {
 
 // Save extra taxonomy fields callback function.
 
-add_action('edited_wsi-product-cat', 'save_category_template_field', 10, 2);
+add_action('edit_wsi-product-cat', 'save_category_template_field', 10, 2);
 add_action('create_wsi-product-cat', 'save_category_template_field', 10, 2);
 
 function save_category_template_field($term_id) {
     if (isset($_POST['wsi_prodcut_cat_template'])) {
-        update_term_meta("template_$term_id", 'wsi_prodcut_cat_template', $_POST['wsi_prodcut_cat_template']);
+        update_term_meta($term_id, 'wsi_prodcut_cat_template', $_POST['wsi_prodcut_cat_template']);
     }
 }
 
