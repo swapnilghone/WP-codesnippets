@@ -25,7 +25,7 @@ add_action( 'init',function(){
 // add custom fileds for product type
 add_action( 'woocommerce_product_options_general_product_data',function() {
     global $woocommerce, $post;
-    echo '<div class="options_group">';
+    echo '<div class="options_group show_if_ticket_product">';
 
     // Create a number field, for example for UPC
     woocommerce_wp_text_input(
