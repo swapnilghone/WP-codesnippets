@@ -76,4 +76,3 @@ function save_category_template_field($term_id) {
     }
 }
 
-
